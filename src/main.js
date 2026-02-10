@@ -5,7 +5,6 @@ import store from './store';
 import i18n from '@/locale';
 import '@/assets/icons';
 import '@/utils/filters';
-import './registerServiceWorker';
 import { dailyTask } from '@/utils/common';
 import '@/assets/css/global.scss';
 import NProgress from 'nprogress';

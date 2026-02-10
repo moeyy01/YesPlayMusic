@@ -7,6 +7,9 @@ function resolve(dir) {
 module.exports = {
   // 生产环境打包不输出 map
   productionSourceMap: false,
+  publicPath: process.env.NODE_ENV === 'production' 
+    ? 'https://cdn.moeyy.cn/yesplayermusic/' 
+    : '/',
   devServer: {
     disableHostCheck: true,
     port: process.env.DEV_SERVER_PORT || 8080,
@@ -20,19 +23,19 @@ module.exports = {
       },
     },
   },
-  pwa: {
-    name: 'YesPlayMusic',
-    iconPaths: {
-      favicon32: 'img/icons/favicon-32x32.png',
-    },
-    themeColor: '#ffffff00',
-    manifestOptions: {
-      background_color: '#335eea',
-    },
-    // workboxOptions: {
-    //   swSrc: "dev/sw.js",
-    // },
-  },
+  // pwa: {
+  //   name: 'YesPlayMusic',
+  //   iconPaths: {
+  //     favicon32: 'img/icons/favicon-32x32.png',
+  //   },
+  //   themeColor: '#ffffff00',
+  //   manifestOptions: {
+  //     background_color: '#335eea',
+  //   },
+  //   // workboxOptions: {
+  //   //   swSrc: "dev/sw.js",
+  //   // },
+  // },
   pages: {
     index: {
       entry: 'src/main.js',
